@@ -1,0 +1,46 @@
+color=0D1017
+
+hide-keyboard-layout
+font=Fira Code
+font-size=50
+clock
+timestr=%I:%M %p
+datestr=%a, %d.%e.%Y
+
+
+
+indicator
+indicator-radius=150
+indicator-thickness=10
+indicator-caps-lock
+
+
+inside-color=0D1017
+inside-clear-color=0D1017
+inside-caps-lock-color=0D1017
+inside-ver-color=0D1017
+inside-wrong-color=F26D78
+
+ring-color=BFBDB6
+ring-clear-color=131721
+ring-caps-lock-color=73B8FF
+ring-ver-color=231f20D9
+ring-wrong-color=F26D78
+
+line-color=0D1017
+line-clear-color=73B8FF
+line-caps-lock-color=009ddcFF
+line-ver-color=d9d8d8FF
+line-wrong-color=F26D78
+
+text-color=BFBDB6
+text-clear-color=73B8FF
+text-ver-color=73B8FF
+text-wrong-color=0D1017
+
+key-hl-color=39BAE6
+bs-hl-color=
+caps-lock-key-hl-color=fff
+caps-lock-bs-hl-color=ee2e24FF
+disable-caps-lock-text
+text-caps-lock-color=009ddc
