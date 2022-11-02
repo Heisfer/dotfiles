@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export GTK_THEME=ayu-dark:dark
+export _JAVA_AWT_WM_NONREPARENTING=1
+export PHPSTORM_JDK=/usr/lib/jvm/java-18-openjdk
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export HYPRLAND_LOG_WLR=1
+#export XCURSOR_SIZE=24
+exec Hyprland $@
