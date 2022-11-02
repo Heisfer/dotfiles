@@ -1,0 +1,111 @@
+@define-color bg        #131721;
+@define-color fg        #BFBDB6;
+@define-color active    #39BAE6;
+@define-color red       #F26D78;
+@define-color border    #565B66;
+@define-color orange    #FFB454;
+@define-color red       #F26D78;
+
+
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Comic Code Ligatures", "Font Awesome 6 Free";
+    font-size: 18px;
+    font-weight: 400;
+    color: @fg;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @fg;
+}
+
+
+
+#cpu, #memory, #temperature, #pulseaudio, #network, #backlight, #upower, #battery, #tray, #language, #custom-vpn, #custom-notification, #clock {
+    padding: 3px 10px;
+    margin: 3px 0px;
+    color: @fg;
+    background-color: @bg;
+    box-shadow: inherit;
+    border-radius: 10px;
+    border: 2px solid @border;
+}
+
+#network.disconnected, #network.disabled, #battery.critical, #pulseaudio.muted {
+    color: @red;
+    border: 2px solid @red; 
+}
+
+
+#battery.discharging {
+    color: @fg;
+    border: 2px solid @fg;
+}
+
+
+
+
+#battery.warning {
+    color: @orange;
+    border: 2px solid @orange;
+}
+
+#battery.charging {
+    color: @active;
+    border: 2px solid @active;
+}
+
+#tray menu {
+    background-color: @bg;
+    color: @fg;
+}
+
+#workspaces {
+    padding: 4px;
+    color: @active;
+    border-radius: 10px;
+}
+
+#workspaces button {
+    padding: 5px;
+    border-radius: 10px;
+    color: @fg;
+    background: @bg;
+    margin-right: 5px;
+    border: 2px solid @border;
+}
+  
+#workspaces button.active, #workspaces button.focused {
+    color: @active;
+    border: 2px solid @fg;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#temperature.critical, #workspaces button.urgent {
+    color: @red;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+tooltip {
+    background: @bg;
+}
+
+tooltip label {
+    color: @fg;
+}
+
+window#waybar.gtk-layer-shell {
+    background-color: #fff;
+}

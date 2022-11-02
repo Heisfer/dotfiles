@@ -1,0 +1,103 @@
+{
+    "layer": "top",
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 51, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["tray", "hyprland/language"],
+    "modules-center": ["wlr/workspaces", "sway/workspaces", "custom/notification"],
+    "modules-right": ["pulseaudio", "network", "custom/vpn", "battery", "clock"],
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}"
+    },
+    "hyprland/language": {
+        "format": " {}",
+        "format-en": "US",
+        "format-et": "EE",
+        "keyboard-name": "AT Translated Set 2 keyboard"
+    },
+    "wlr/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": ""
+            },
+            "return-type": "json",
+            "exec-if": "which swaync-client",
+            "exec": "swaync-client -swb",
+            "on-click": "swaync-client -t -sw",
+            "on-click-right": "swaync-client -d -sw",
+            "escape": true
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "a",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+            },
+            "scroll-step": 1,
+            "on-click": "pavucontrol"
+    },
+    "network": {
+        "interface": "wlp2s0",
+        "format": "{ifname}",
+        "format-wifi": " {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "custom/vpn": {
+        "format": " VPN",
+        "exec": "echo '{\"class\": \"connected\"}'",
+        "exec-if": "test -d /proc/sys/net/ipv4/conf/tap0",
+        "return-type": "json",
+        "interval": 5
+    },
+    "clock": {
+        "interval": 60,
+        "format": " {:%I:%M %p}",
+        "format-alt": " {:%I:%M %p |  %d.%m}",
+        "tooltip": true,
+        "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        "calendar-weeks-pos": "right",
+        "format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
+        "format-calendar-weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+        "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+    },
+    "tray": {
+        "spacing": 10
+    }
+}
+
